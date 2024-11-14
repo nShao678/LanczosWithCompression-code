@@ -177,7 +177,7 @@ for iter = 1:para.matvecMax
         b = max(Theta)-bb;
 
         mu=(1-sqrt(a/b))/(1+sqrt(a/b));
-        mSet(ii)=ii+ceil(log(2/para.tolra + 1) / (pi*ellipke(sqrt(1-mu^2))/(4*ellipke(mu))));
+        mSet(ii)=ii+ceil(log(2/para.tolra + 1) / (pi*ellipke(sqrt(1-mu^2))/(4*ellipke(mu)))-1);
     end
     [m,ii] = min(mSet);
     m = min(m,dMax-lanstep)-ii;
@@ -201,9 +201,8 @@ for iter = 1:para.matvecMax
         poles(2*i)=-c;
     end
     poles = poles+bb;
+    poles = [poles,inf];
     U = rat_krylov(T(1:dMax-1,1:dMax-1),b0,poles,'real');
-
-
     Q = Q(:,1:ii);
     U = orth(U-Q*(Q'*U));
     U = orth(U-Q*(Q'*U));
