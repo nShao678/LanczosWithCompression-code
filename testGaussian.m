@@ -1,5 +1,5 @@
 clear all
-close all
+% close all
 
 seedMax = 100;
 histLC = cell(1,seedMax);
@@ -11,21 +11,18 @@ A = delsq(numgrid('L',2+nx));
 n = size(A,1);
 A = n*A;
 lambda = eigs(A,1,'smallestabs');
-
+numeval = 1;
 
 
 dMax = 60;
-iterMax = 10000;
+iterMax = 1000;
 tol = 1e-8;
 toleval = lambda*(1+tol);
-numeval = 1;
 para.lamCon = toleval;
 para.hist = 1;
 para.iterMax = iterMax;
 para.orth = 1;
-para.tolr = 1e-7;
-para.F = 0;
-para.tolra = 1e-4;
+para.tolra = 1e-6;
 dMin = 30;
 
 parfor iterSeed = 1:seedMax
@@ -107,7 +104,7 @@ tables = 1-table2s./table1s;
 stats = genStat(tables);
 latex(sym(stats'))
 clear A
-save('dataGaussian')
+save('data_Gaussian')
 
 
 function stat = genStat(data)

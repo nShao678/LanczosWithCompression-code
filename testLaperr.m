@@ -16,9 +16,7 @@ tol = 1e-8;
 para.hist = 1;
 para.iterMax = iterMax;
 para.orth = 1;
-para.tolr = 1e-7;
-para.F = 0;
-para.tolra = 1e-4;
+para.tolra = 1e-6;
 para.err = 1;
 
 

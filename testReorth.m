@@ -15,7 +15,7 @@ rng(1);
 
 
     x0 = randn(n,1);
-    para.tolra = 1e-12;
+    para.tolra = 1e-8;
     para.orth = 1;
     para.tolr = -inf;
     

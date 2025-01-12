@@ -25,8 +25,7 @@ for ii = 1:iiMax
     para.hist = 1;
     para.matvecMax = 6000;
     para.orth = 1;
-    para.tolr = 1e-7;
-    para.tolra = 1e-4;
+    para.tolra = 1e-6;
 
     [~,~,histLC{ii}] = LC(@(x) A*x,x0,dMax,numeval,para);
 

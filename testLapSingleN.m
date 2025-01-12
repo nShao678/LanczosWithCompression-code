@@ -26,9 +26,7 @@ for ii = 1:iiMax
     para.hist = 1;
     para.matvecMax = iterMax;
     para.orth = 1;
-    para.tolr = 1e-7;
-    para.F = 0;
-    para.tolra = 1e-4;
+    para.tolra = 1e-6;
 
     [~,~,histLC{ii}] = LC(@(x) A*x,x0,dMax,numeval,para);
 
@@ -61,7 +59,8 @@ end
 hold off
 legend('FontSize',18,'Location','northwest')
 xlabel('Matrix size')
-ylabel('ratio between matvecs required of LC and KS')
+ylabel('Improvement of LC over KS')
+ytickformat('percentage');
 set(gcf, 'Color', 'w');
 export_fig('fig/LapSingleN.pdf')
 export_fig('fig/LapSingleN.eps')

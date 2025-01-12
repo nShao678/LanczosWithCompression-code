@@ -18,9 +18,7 @@ para.lamCon = toleval;
 para.hist = 1;
 para.matvecMax = iterMax;
 para.orth = 1;
-para.tolr = 1e-7;
-para.F = 0;
-para.tolra = 1e-4;
+para.tolra = 1e-6;
 
 [~,~,histLC] = LC(@(x) A*x,x0,dMax,numeval,para);
 dSet = [4,8,16,25,30,35,40];

@@ -13,6 +13,7 @@ matvecSet = [500,400,600,600,1500,1500,3500,3500,3500];
 matvec = zeros(2,len);
 rhoerr = zeros(2,len);
 result = zeros(4,len);
+len = 6;
 for ii = 1:len
     load(['data/',name{ii},'.mat']);
     A = Problem.A;
@@ -27,7 +28,7 @@ for ii = 1:len
 
     para.hist = 1;
     para.matvecMax = matvecSet(ii);
-    para.tolra = 1e-12;
+    para.tolra = 1e-8;
     para.F = 0;
     para.orth = 1;
     dMin = ceil(dMax/2);
