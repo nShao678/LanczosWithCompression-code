@@ -108,7 +108,7 @@ for iter = 1:para.matvecMax
         if para.checkRitz == 1 
             AV = A(V(:,1:j));
             errF = V(:,1:j)'*AV-T(1:j,1:j);
-            errRitz(j+matvec-j0+1) = norm(errF,'fro');
+            errRitz(j+matvec-j0+1) = norm(errF);
         end
         if para.err==1 || para.tolr ~= -inf
             alphaSet(matvec+j-j0+1) = alpha;
@@ -138,8 +138,8 @@ for iter = 1:para.matvecMax
                     errF = beta*qs(jj,:);
                     vs = V(:,1:ii)*Qt(:,idxt(1:numeval));
                     zs = A(vs);
-                    errapp(1,matvec-dMax+ii+1) = norm(zs-vs*(vs'*zs),'fro');
-                    errapp(2,matvec-dMax+ii+1) = norm(errF,'fro');
+                    errapp(1,matvec-dMax+ii+1) = norm(zs-vs*(vs'*zs));
+                    errapp(2,matvec-dMax+ii+1) = norm(errF);
                 end
             end
         end

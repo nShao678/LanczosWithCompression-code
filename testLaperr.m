@@ -1,5 +1,6 @@
 clear all
 close all
+warning('off')
 rng(1);
 
 nx = 300;
@@ -34,7 +35,7 @@ plot(abs(histLC1.rho(1,idx)-rho1(idx)),'kx','LineWidth',1,'DisplayName','Differe
 hold off
 axis([-inf,inf,-inf,inf])
 set(gca,'yscale','log')
-legend('FontSize',18,'Location','west')
+legend('FontSize',18,'Location','west','box','off')
 set(gcf, 'Color', 'w');
 export_fig('fig/exprho1.pdf')
 export_fig('fig/exprho1.eps')
@@ -43,12 +44,12 @@ figure
 hold on
 plot(histLC1.errapp(1,:),'r-','LineWidth',2,'DisplayName','Norm of residual')
 plot(histLC1.errapp(2,:),'b--','LineWidth',2,'DisplayName','Approximation')
-plot(abs(histLC1.errapp(1,:)-histLC1.errapp(2,:)),'kx','LineWidth',2,'DisplayName','Difference')
+plot(abs(histLC1.errapp(1,:)-histLC1.errapp(2,:)),'kx','LineWidth',1,'DisplayName','Difference')
 
 hold off
 axis([-inf,inf,-inf,inf])
 set(gca,'yscale','log')
-legend('FontSize',18,'Location','southwest')
+legend('FontSize',18,'Location','west','box','off')
 set(gcf, 'Color', 'w');
 export_fig('fig/experr1.pdf')
 export_fig('fig/experr1.eps')
@@ -63,12 +64,12 @@ figure
 hold on
 plot(sum(histLC2.rho,1)-sum(lambda(1:numeval)),'r-','LineWidth',2,'DisplayName','LC')
 plot(sum(rho2,1)-sum(lambda(1:numeval)),'b--','LineWidth',2,'DisplayName','Lanczos')
-plot(abs(sum(rho2(:,idx),1)-sum(histLC2.rho(:,idx),1)),'kx','LineWidth',2,'DisplayName','Difference')
+plot(abs(sum(rho2(:,idx),1)-sum(histLC2.rho(:,idx),1)),'kx','LineWidth',1,'DisplayName','Difference')
 
 hold off
 axis([-inf,inf,-inf,inf])
 set(gca,'yscale','log')
-legend('FontSize',18,'Location','west')
+legend('FontSize',18,'Location','west','box','off')
 set(gcf, 'Color', 'w');
 export_fig('fig/exprho2.pdf')
 export_fig('fig/exprho2.eps')
@@ -77,13 +78,13 @@ figure
 hold on
 plot(histLC2.errapp(1,:),'r-','LineWidth',2,'DisplayName','Norm of residual')
 plot(histLC2.errapp(2,:),'b--','LineWidth',2,'DisplayName','Approximation')
-plot(abs(histLC2.errapp(1,:)-histLC2.errapp(2,:)),'kx','LineWidth',2,'DisplayName','Difference')
+plot(abs(histLC2.errapp(1,:)-histLC2.errapp(2,:)),'kx','LineWidth',1,'DisplayName','Difference')
 
 
 hold off
 axis([-inf,inf,-inf,inf])
 set(gca,'yscale','log')
-legend('FontSize',18,'Location','southwest')
+legend('FontSize',18,'Location','west','box','off')
 set(gcf, 'Color', 'w');
 export_fig('fig/experr2.pdf')
 export_fig('fig/experr2.eps')
