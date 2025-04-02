@@ -35,10 +35,10 @@ hold on
 for ii = 1:iiMax
 plot((histKS{ii}.rho-lambda)/lambda,'--','DisplayName',['KS-',num2str(dSet(ii))],'LineWidth',2)
 end
-plot((histLC.rho-lambda)/lambda,'b--','DisplayName','LC','LineWidth',2)
+plot((histLC.rho-lambda)/lambda,'b-','DisplayName','LC','LineWidth',2)
 hold off
 set(gca,'yscale','log')
-legend('FontSize',18)
+legend('FontSize',18,'box','off')
 set(gcf, 'Color', 'w');
 axis([-inf,inf,tol,inf])
 export_fig('fig/expLapSingleL.pdf')

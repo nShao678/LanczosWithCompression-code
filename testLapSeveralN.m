@@ -56,7 +56,7 @@ for jj = 1:jjMax
     plot(locx,100*(1-table1(:,jj)./table2(:,jj)),'x-','linewidth',2,'DisplayName',['relerr=',num2str(10^(-3-jj),'%0.0e')])
 end
 hold off
-legend('FontSize',18,'Location','southeast')
+legend('FontSize',18,'Location','southeast','Box','off')
 xlabel('Matrix size')
 ytickformat('percentage');
 ylabel('Improvement of LC over KS')
