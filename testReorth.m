@@ -43,6 +43,18 @@ rng(1);
     export_fig(['fig/reorth.pdf'])
     export_fig(['fig/reorth.eps'])
 
+    figure
+    hold on
+    plot(hist1.errRitz,'b-','LineWidth',2,'DisplayName','With fill-in')
+    plot(hist0.errRitz,'r--o','LineWidth',2,'DisplayName','Without fill-in')
+    hold off
+    legend('FontSize',18,'Location','east')
+    set(gca,'yscale','log')
+    set(gcf, 'Color', 'w');
+    axis([220,235,-inf,inf])
+    export_fig(['fig/reorth1.pdf'])
+    export_fig(['fig/reorth1.eps'])
+
     
 
 
