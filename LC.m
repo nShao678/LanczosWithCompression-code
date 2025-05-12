@@ -175,8 +175,9 @@ for iter = 1:para.matvecMax
         bb = (theta(ii+1)+theta(numeval))/2;
         b = max(Theta)-bb;
 
-        mu=(1-sqrt(a/b))/(1+sqrt(a/b));
-        mSet(ii)=ii+ceil(log(2/para.tolra + 1) / (pi*ellipke(sqrt(1-mu^2))/(4*ellipke(mu))) - 1);
+        %mu=(1-sqrt(a/b))/(1+sqrt(a/b));
+        %mSet(ii)=ii+ceil(log(2/para.tolra + 1) / (pi*ellipke(sqrt(1-mu^2))/(4*ellipke(mu))) - 1);
+        mSet(ii)=ii+2*ceil(log(4/para.tolra)* log(4*b/a)/ (pi^2));
     end
     [m,ii] = min(mSet);
     m = min(m,dMax-lanstep)-ii;
