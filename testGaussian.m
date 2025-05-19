@@ -26,7 +26,6 @@ para.tolra = 1e-6;
 dMin = 30;
 
 parfor iterSeed = 1:seedMax
-    iterSeed
     rng(iterSeed);
 
     x0 = randn(n,1);
@@ -48,7 +47,6 @@ x0 = randn(n,1);
 
 
 parfor iterSeed = 1:seedMax
-    iterSeed
     rng(iterSeed);
 
     x0 = randn(n,1);

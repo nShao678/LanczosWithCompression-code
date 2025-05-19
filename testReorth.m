@@ -36,7 +36,7 @@ rng(1);
     plot(hist1.errRitz,'b-','LineWidth',2,'DisplayName','With fill-in')
     plot(hist0.errRitz,'r--','LineWidth',2,'DisplayName','Without fill-in')
     hold off
-    legend('FontSize',18,'Location','east')
+    legend('FontSize',18,'Location','east','box','off')
     set(gca,'yscale','log')
     set(gcf, 'Color', 'w');
     axis([0,1600,-inf,inf])
@@ -48,7 +48,7 @@ rng(1);
     plot(hist1.errRitz,'b-','LineWidth',2,'DisplayName','With fill-in')
     plot(hist0.errRitz,'r--o','LineWidth',2,'DisplayName','Without fill-in')
     hold off
-    legend('FontSize',18,'Location','east')
+    legend('FontSize',18,'Location','east','box','off')
     set(gca,'yscale','log')
     set(gcf, 'Color', 'w');
     axis([220,235,-inf,inf])

@@ -13,7 +13,7 @@ x0 = randn(n,1);
 
 dMax = 60;
 iterMax = 5000;
-tol = 1e-8;
+tol = 1e-12;
 para.hist = 1;
 para.iterMax = iterMax;
 para.orth = 1;
@@ -29,8 +29,8 @@ rho1 = lanczos(@(x) A*x,x0,para.lamCon,numeval);
 idx = find(rho1>para.lamCon);
 figure
 hold on
-plot(histLC1.rho(1,idx)-lambda(1),'r-','LineWidth',2,'DisplayName','LC')
-plot(rho1-lambda(1),'b--','LineWidth',2,'DisplayName','Lanczos')
+plot(histLC1.rho(1,idx)-lambda(1),'b-','LineWidth',2,'DisplayName','LC')
+plot(rho1-lambda(1),'r--','LineWidth',2,'DisplayName','Lanczos')
 plot(abs(histLC1.rho(1,idx)-rho1(idx)),'kx','LineWidth',1,'DisplayName','Difference')
 hold off
 axis([-inf,inf,-inf,inf])
@@ -42,8 +42,8 @@ export_fig('fig/exprho1.eps')
 
 figure
 hold on
-plot(histLC1.errapp(1,:),'r-','LineWidth',2,'DisplayName','Norm of residual')
-plot(histLC1.errapp(2,:),'b--','LineWidth',2,'DisplayName','Approximation')
+plot(histLC1.errapp(1,:),'b-','LineWidth',2,'DisplayName','Norm of residual')
+plot(histLC1.errapp(2,:),'r--','LineWidth',2,'DisplayName','Approximation')
 plot(abs(histLC1.errapp(1,:)-histLC1.errapp(2,:)),'kx','LineWidth',1,'DisplayName','Difference')
 
 hold off
@@ -62,8 +62,8 @@ rho2 = lanczos(@(x) A*x,x0,para.lamCon,numeval);
 idx = find(sum(rho2,1)>para.lamCon);
 figure
 hold on
-plot(sum(histLC2.rho,1)-sum(lambda(1:numeval)),'r-','LineWidth',2,'DisplayName','LC')
-plot(sum(rho2,1)-sum(lambda(1:numeval)),'b--','LineWidth',2,'DisplayName','Lanczos')
+plot(sum(histLC2.rho,1)-sum(lambda(1:numeval)),'b-','LineWidth',2,'DisplayName','LC')
+plot(sum(rho2,1)-sum(lambda(1:numeval)),'r--','LineWidth',2,'DisplayName','Lanczos')
 plot(abs(sum(rho2(:,idx),1)-sum(histLC2.rho(:,idx),1)),'kx','LineWidth',1,'DisplayName','Difference')
 
 hold off
@@ -76,8 +76,8 @@ export_fig('fig/exprho2.eps')
 
 figure
 hold on
-plot(histLC2.errapp(1,:),'r-','LineWidth',2,'DisplayName','Norm of residual')
-plot(histLC2.errapp(2,:),'b--','LineWidth',2,'DisplayName','Approximation')
+plot(histLC2.errapp(1,:),'b-','LineWidth',2,'DisplayName','Norm of residual')
+plot(histLC2.errapp(2,:),'r--','LineWidth',2,'DisplayName','Approximation')
 plot(abs(histLC2.errapp(1,:)-histLC2.errapp(2,:)),'kx','LineWidth',1,'DisplayName','Difference')
 
 

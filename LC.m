@@ -51,7 +51,7 @@ end
 
 
 
-lanstep = 5; % minimal Lanczos step before restarting
+lanstep = 2; % minimal Lanczos step before restarting
 
 
 n = size(v,1);
