@@ -61,8 +61,8 @@ xlabel('Matrix size')
 ytickformat('percentage');
 ylabel('Improvement of LC over KS')
 set(gcf, 'Color', 'w');
-export_fig('fig/LapServeralN.pdf')
-export_fig('fig/LapServeralN.eps')
+export_fig('fig/LapSeveralN.pdf')
+export_fig('fig/LapSeveralN.eps')
 
 latex(sym([locx',table1]))
 latex(sym([locx',table2]))
