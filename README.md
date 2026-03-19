@@ -11,4 +11,4 @@ Rational Krylov Toolbox (RKToolbox) is required, and can be downloaded at [http:
 To reproduce numerical results, run main.m.
 
 
-[1]: 
+[1]: Angelo A Casulli, Daniel Kressner, Nian Shao. ``Lanczos with compression for symmetric eigenvalue problems'' arXiv:2602.20948
